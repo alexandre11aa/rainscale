@@ -9,5 +9,5 @@ urlpatterns = [
     # path('', include('user.urls')),
     # path('', include('location.urls')),
     # path('', include('experiment.urls')),
-    # path('', include('model.urls'))
+    path('', include('model.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

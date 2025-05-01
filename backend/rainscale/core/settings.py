@@ -68,7 +68,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'staticfiles/templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,7 +141,7 @@ STATIC_URL = '/static/'
 
 # Diretórios adicionais de arquivos estáticos (para desenvolvimento)
 STATICFILES_DIRS = [
-    BASE_DIR / 'templates',  # Supondo que você tenha uma pasta 'templates' no nível do BASE_DIR
+    BASE_DIR / 'templates',
 ]
 
 # Midia carregadas para o sistema
