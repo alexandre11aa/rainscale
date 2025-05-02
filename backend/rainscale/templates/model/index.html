@@ -4,55 +4,88 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'model/css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'model/css/index.css' %}" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 </head>
 
 <body>
 
-  <div class="sidebar">
-    <h5></h5>
+    <!-- Layout principal -->
+    <div class="main-container">
 
-    <div class="mb-3">
-      <label for="paisSelect" class="form-label">País</label>
-      <select class="form-select" id="paisSelect">
-        <option selected>Escolher país</option>
-        <option value="br">Brasil</option>
-        <option value="us">Estados Unidos</option>
-        <option value="fr">França</option>
-      </select>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h5></h5>
+
+            <div class="mb-3">
+                <label for="paisSelect" class="form-label">País</label>
+                <select class="form-select" id="paisSelect">
+                    <option selected>Escolher país</option>
+                    <option value="br">Brasil</option>
+                    <option value="us">Estados Unidos</option>
+                    <option value="fr">França</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="regiaoSelect" class="form-label">Região</label>
+                <select class="form-select" id="regiaoSelect">
+                    <option selected>Escolher região</option>
+                    <option value="norte">Norte</option>
+                    <option value="sul">Sul</option>
+                    <option value="centro">Centro</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="modeloSelect" class="form-label">Modelo</label>
+                <select class="form-select" id="modeloSelect">
+                    <option selected>Escolher modelo</option>
+                    <option value="1">Modelo A</option>
+                    <option value="2">Modelo B</option>
+                    <option value="3">Modelo C</option>
+                </select>
+            </div>
+
+            <div class="d-grid mt-4 mb-4">
+                <button type="button" class="btn btn-primary">Buscar</button>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="d-grid">
+                <a href="#" class="btn btn-footer">Como Usar?</a>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        
     </div>
 
-    <div class="mb-3">
-      <label for="regiaoSelect" class="form-label">Região</label>
-      <select class="form-select" id="regiaoSelect">
-        <option selected>Escolher região</option>
-        <option value="norte">Norte</option>
-        <option value="sul">Sul</option>
-        <option value="centro">Centro</option>
-      </select>
-    </div>
+<!-- Script para carregar o Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Inicializa o mapa
+    const map = L.map('map').setView([-7.1219, -34.8789], 6); // Exemplo: Paraíba
 
-    <div class="mb-3">
-      <label for="modeloSelect" class="form-label">Modelo</label>
-      <select class="form-select" id="modeloSelect">
-        <option selected>Escolher modelo</option>
-        <option value="1">Modelo A</option>
-        <option value="2">Modelo B</option>
-        <option value="3">Modelo C</option>
-      </select>
-    </div>
+    // Adiciona o layer do mapa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-    <div class="d-grid mt-4 mb-4">
-      <button type="button" class="btn btn-primary">Buscar</button>
-    </div>
-
-    <div class="spacer"></div>
-
-    <div class="d-grid">
-      <a href="#" class="btn btn-footer">Como Usar?</a>
-    </div>
-</div>
-
+    // Captura clique no mapa
+    map.on('click', function(e) {
+        const { lat, lng } = e.latlng;
+        alert(`Latitude: ${lat.toFixed(5)}\nLongitude: ${lng.toFixed(5)}`);
+    });
+</script>
 
 {% endblock content %}

@@ -1,14 +1,15 @@
+/* Sidebar */
 .sidebar {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 56px); /* ocupa o restante da tela abaixo da navbar */
+    height: calc(100vh - 50px); /* ocupa o restante da tela abaixo da navbar */
     background-color: #1e1e1e;
     color: #f1f1f1;
     position: fixed;
-    top: 56px;
+    top: 50px;
     left: 0;
     padding: 1rem;
-    width: 250px;
+    width: 251px;
     border-right: 1px solid #dee2e6;
     overflow-y: auto; /* habilita rolagem se necessário */
 }
@@ -66,4 +67,31 @@
 
 .spacer {
     margin-top: auto;
+}
+
+/* Layout Principal */
+.main-container {
+    display: flex;
+    height: 100vh;
+    margin-left: 251px;
+    flex-direction: column;
+}
+
+/* Mapa */
+.map-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+#map {
+    width: 95%;
+    height: 500px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
