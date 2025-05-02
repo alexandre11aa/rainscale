@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.db.models import Q
 
 
-@method_decorator(login_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
 class IndexView(View):
     #form_class = EnderecoForm
     template_name = 'model/index.html'
@@ -26,11 +26,10 @@ class IndexView(View):
         # form = self.form_class(request.POST, request.FILES)
 
         # if form.is_valid():
-            
+
         #     return redirect(self.success_url)
         # else:
-            
+
         #     return redirect(self.get_url)
 
         pass
-

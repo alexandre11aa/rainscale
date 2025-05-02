@@ -134,14 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # Diretório onde os arquivos estáticos coletados serão armazenados em produção
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # URL para acessar arquivos estáticos
 STATIC_URL = '/static/'
 
 # Diretórios adicionais de arquivos estáticos (para desenvolvimento)
 STATICFILES_DIRS = [
-    BASE_DIR / 'templates',
+    BASE_DIR / 'static',
 ]
 
 # Midia carregadas para o sistema
