@@ -1,6 +1,41 @@
+.custom-navbar {
+    background-color: #007bff; /* Azul Bootstrap padrão */
+}
+
+/* Opcional: ajuste a cor do texto e dos links */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar a {
+    color: white;
+}
+
+.custom-navbar .navbar-brand:hover,
+.custom-navbar .nav-link:hover,
+.custom-navbar a:hover {
+    color: #e2e6ea; /* tom mais claro ao passar o mouse */
+}
+
 .custom-login-btn {
     background-color: #e4e4e4; /* azul */
     color: white;
     margin-top: 16px; /* espaço acima do botão */
     border: none;
+}
+
+.custom-btn-group {
+    margin-right: 30px; /* controla a distância da borda direita */
+}
+
+.custom-login-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px; /* deixa mais "quadrado", ajuste para 0 se quiser totalmente reto */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.custom-login-btn:hover {
+    background-color: #0056b3;
 }

@@ -1,17 +1,14 @@
 {% load static %}
 
 <header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Rainscale</a>
-        </div>
 
-        <div class="ms-auto">
-            <a href="/admin/login/" class="btn btn-primary mt-3">Conectar-se</a>
+            <div class="d-flex gap-3 ms-auto custom-btn-group">
+                <a href="#" class="custom-login-btn">Sobre</a>
+                <a href="/admin/login/" class="custom-login-btn">Administração</a>
+            </div>
         </div>
-
     </nav>
-
 </header>

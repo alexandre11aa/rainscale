@@ -10,19 +10,8 @@
 
 <body>
 
-  <!-- Sidebar -->
   <div class="sidebar">
-    <h5>Filtros</h5>
-
-    <div class="mb-3">
-      <label for="modeloSelect" class="form-label">Modelo</label>
-      <select class="form-select" id="modeloSelect">
-        <option selected>Escolher modelo</option>
-        <option value="1">Modelo A</option>
-        <option value="2">Modelo B</option>
-        <option value="3">Modelo C</option>
-      </select>
-    </div>
+    <h5></h5>
 
     <div class="mb-3">
       <label for="paisSelect" class="form-label">País</label>
@@ -43,6 +32,27 @@
         <option value="centro">Centro</option>
       </select>
     </div>
-  </div>
+
+    <div class="mb-3">
+      <label for="modeloSelect" class="form-label">Modelo</label>
+      <select class="form-select" id="modeloSelect">
+        <option selected>Escolher modelo</option>
+        <option value="1">Modelo A</option>
+        <option value="2">Modelo B</option>
+        <option value="3">Modelo C</option>
+      </select>
+    </div>
+
+    <div class="d-grid mt-4 mb-4">
+      <button type="button" class="btn btn-primary">Buscar</button>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="d-grid">
+      <a href="#" class="btn btn-footer">Como Usar?</a>
+    </div>
+</div>
+
 
 {% endblock content %}
