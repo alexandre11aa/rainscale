@@ -33,3 +33,31 @@ class IndexView(View):
         #     return redirect(self.get_url)
 
         pass
+ 
+
+# @method_decorator(login_required, name='dispatch')
+class TutorialView(View):
+    #form_class = EnderecoForm
+    template_name = 'model/tutorial.html'
+
+    def get(self, request, *args, **kwargs):
+
+        context = {
+
+        }
+
+        return render(request, self.template_name, context)
+    
+
+# @method_decorator(login_required, name='dispatch')
+class SobreView(View):
+    #form_class = EnderecoForm
+    template_name = 'model/sobre.html'
+
+    def get(self, request, *args, **kwargs):
+
+        context = {
+
+        }
+
+        return render(request, self.template_name, context)
