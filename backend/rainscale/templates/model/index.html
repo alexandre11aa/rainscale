@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 </head>
@@ -67,19 +69,72 @@
             <div id="map"></div>
         </div>
 
-        <!-- Formulário abaixo do mapa -->
-        <div class="map-form">
+        <!-- Inputs e Botões -->
+        <div class="controls-container">
+            <div class="row g-3 align-items-end p-3">
 
-            <input type="text" placeholder="Latitude" />
-            <input type="text" placeholder="Longitude" />
-            <button>Gerar Série</button>
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary"
+                            title="Mais informações"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#extra-info"
+                            aria-expanded="false"
+                            aria-controls="extra-info"
+                    >
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
 
-            <input type="text" placeholder="Informações do(s) Experimento(s)" />
-            <input type="text" placeholder="Informações dos Dados Locais" />
-            <input type="text" placeholder="Informações do Modelo" />
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text" id="lat">Latitude</span>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Informe uma latitude..."
+                               aria-label="Latitude"
+                               aria-describedby="lat"
+                               value=''
+                        >
+                    </div>
+                </div>
 
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text" id="lon">Longitude</span>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Informe uma longitude..."
+                               aria-label="Longitude"
+                               aria-describedby="lon"
+                               value=''
+                        >
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <button class="btn btn-outline-primary"
+                            title="Download">
+                        <i class="bi bi-download"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Informações adicionais -->
+            <div class="collapse mt-3" id="extra-info">
+                <div class="card card-body">
+                    Modelo:
+                </div>
+                <div class="card card-body">
+                    Experimentos:
+                </div>
+                <div class="card card-body">
+                    Dados Locais:
+                </div>
+                <div class="card card-footer"></div>
+            </div>
         </div>
-        
+
     </div>
 
 <!-- Script para carregar o Leaflet -->

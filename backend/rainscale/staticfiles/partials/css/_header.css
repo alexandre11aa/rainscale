@@ -1,6 +1,35 @@
+/* Define a cor da navbar como um todo */
+.custom-navbar {
+    background-color: #007bff;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* Estilo para os botões "Sobre" e "Administração" */
 .custom-login-btn {
-    background-color: #e4e4e4; /* azul */
+    padding: 8px 16px;
+    background-color: #007bff;
     color: white;
-    margin-top: 16px; /* espaço acima do botão */
+    text-decoration: none;
+    border-radius: 4px;
     border: none;
+    transition: background-color 0.3s ease;
+}
+
+.custom-login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Alinha os botões à direita com espaçamento */
+.custom-btn-group {
+    margin-right: 20px;
+}
+
+/* Cores de links dentro da navbar */
+.custom-navbar a {
+    color: white;
+}
+
+.custom-navbar a:hover {
+    color: #e2e6ea;
 }
