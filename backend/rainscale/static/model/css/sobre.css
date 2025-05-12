@@ -9,7 +9,7 @@ body {
 
 .main-container {
     display: flex;
-    flex-direction: column; /* Organiza as divs verticalmente */
+    flex-direction: column;
     background-color: white;
     padding: 30px;
     border-radius: 10px;
@@ -17,7 +17,7 @@ body {
     width: 80%;
     max-width: 800px;
     color: #333;
-    gap: 5px; /* Espaço entre as seções */
+    gap: 5px;
 }
 
 h1 {

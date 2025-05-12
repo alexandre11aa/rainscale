@@ -33,7 +33,35 @@ class IndexView(View):
         #     return redirect(self.get_url)
 
         pass
- 
+
+
+# @method_decorator(login_required, name='dispatch')
+class MapaView(View):
+    #form_class = EnderecoForm
+    template_name = 'model/mapa.html'
+    success_url = reverse_lazy('mapa')
+    get_url = reverse_lazy('mapa')
+
+    def get(self, request, *args, **kwargs):
+
+        context = {
+
+        }
+
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        # form = self.form_class(request.POST, request.FILES)
+
+        # if form.is_valid():
+
+        #     return redirect(self.success_url)
+        # else:
+
+        #     return redirect(self.get_url)
+
+        pass
+
 
 # @method_decorator(login_required, name='dispatch')
 class TutorialView(View):
@@ -47,7 +75,7 @@ class TutorialView(View):
         }
 
         return render(request, self.template_name, context)
-    
+
 
 # @method_decorator(login_required, name='dispatch')
 class SobreView(View):
