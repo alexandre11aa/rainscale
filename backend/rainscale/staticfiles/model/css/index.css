@@ -193,10 +193,48 @@
 /* Informações Extras */
 
 #extra-info .card {
-    background-color: #2b2b2b;
+    background-color: #222222;
     color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#extra-info .card-title {
+    margin-bottom: 1rem;
+}
+
+#extra-info .table {
+    color: #ffffff;
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
     border-radius: 10px;
-    box-shadow: 5 2px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#extra-info .table th {
+    width: 25%; /* Define largura fixa das colunas de título */
+    background-color: #444; /* Cor do fundo dos cabeçalhos */
+    color: #ffffff; /* Cor do texto dos <th> */
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+}
+
+#extra-info .table td {
+    background-color: #2b2b2b; /* Mesma cor do card */
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+}
+
+#extra-info a {
+    color: #007bff; /* Link azul claro */
+    text-decoration: underline;
+}
+
+#extra-info a:hover {
+    color: #007bff;
 }
 
 #extra-info .card-footer {

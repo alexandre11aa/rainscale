@@ -3,10 +3,10 @@
 <header>
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top p-0">
         <div class="d-flex w-100" style="height: 50px;">
-            
+
             <!-- Área da logo -->
             <div class="d-flex align-items-center justify-content-center" style="background-color: #0056b3; width: 250px;">
-                <a class="navbar-brand m-0" href="#">
+                <a class="navbar-brand m-0" href="{% url 'index' %}">
                     <img src="{% static 'common/img/rainscale_gota_logo.png' %}" alt="Rainscale Logo" height="35">
                 </a>
             </div>
@@ -14,8 +14,8 @@
             <!-- Área dos botões -->
             <div class="d-flex align-items-center justify-content-end flex-grow-1 px-4" style="background-color: #007bff;">
                 <div class="d-flex gap-3 custom-btn-group">
-                    <a href="sobre" class="custom-login-btn">Sobre</a>
-                    <a href="/admin/login/" class="custom-login-btn">Administração</a>
+                    <a href="{% url 'sobre' %}" class="custom-login-btn">Sobre</a>
+                    <a href="{% url 'admin:login' %}" class="custom-login-btn">Administração</a>
                 </div>
             </div>
 
