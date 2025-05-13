@@ -6,37 +6,51 @@
 
     <div class="mb-3">
         <label for="paisSelect" class="form-label">País</label>
-        <select class="form-select" id="paisSelect">
+        {% if map == True %}
+            <select class="form-select" id="paisSelect" disabled>
+            <option selected>{{ pais }}</option>
+        {% else %}
+            <select class="form-select" id="paisSelect">
             <option selected>Escolher país</option>
-            <option value="br">Brasil</option>
-            <option value="us">Estados Unidos</option>
-            <option value="fr">França</option>
+            {% for pais in paises %}
+                <option value="{{ pais.id }}">{{ pais.nome }}</option>
+            {% endfor %}
+        {% endif %}
         </select>
     </div>
 
     <div class="mb-3">
         <label for="regiaoSelect" class="form-label">Região</label>
-        <select class="form-select" id="regiaoSelect">
+        <select class="form-select" id="regiaoSelect" disabled>
+        {% if map == True %}
+            <option selected>{{ regiao }}</option>
+        {% else %}
             <option selected>Escolher região</option>
-            <option value="norte">Norte</option>
-            <option value="sul">Sul</option>
-            <option value="centro">Centro</option>
+            {% for regiao in regioes %}
+                <option value="{{ regiao.id }}" data-pais="{{ regiao.pais_id }}">{{ regiao.nome }}</option>
+            {% endfor %}
+        {% endif %}
         </select>
     </div>
 
     <div class="mb-3">
         <label for="modeloSelect" class="form-label">Modelo</label>
-        <select class="form-select" id="modeloSelect">
+        <select class="form-select" id="modeloSelect" disabled>
+        {% if map == True %}
+            <option selected>{{ modelo }}</option>
+        {% else %}
             <option selected>Escolher modelo</option>
-            <option value="1">Modelo A</option>
-            <option value="2">Modelo B</option>
-            <option value="3">Modelo C</option>
+            {% for modelo in modelos %}
+                <option value="{{ modelo.id }}" data-regiao="{{ modelo.regiao_id }}">{{ modelo.nome }}</option>
+            {% endfor %}
+        {% endif %}
         </select>
     </div>
 
     <div class="d-grid mt-4 mb-4">
-        {% comment %} <button type="button" class="btn btn-primary">Buscar</button> {% endcomment %}
-        <a href="{% url 'mapa' %}" class="btn btn-primary">Buscar</a>
+        {% if map == False %}
+            <a href="#" class="btn btn-primary" id="modeloBuscar" >Buscar</a>
+        {% endif %}
     </div>
 
     <div class="spacer"></div>
