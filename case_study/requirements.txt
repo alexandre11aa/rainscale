@@ -21,6 +21,7 @@ flatbuffers==25.2.10
 fonttools==4.58.0
 gast==0.6.0
 geographiclib==2.0
+geopandas==1.0.1
 geopy==2.4.1
 google-pasta==0.2.0
 grpcio==1.71.0
@@ -63,6 +64,7 @@ psutil==7.0.0
 ptyprocess==0.7.0
 pure_eval==0.2.3
 Pygments==2.19.1
+pyogrio==0.11.0
 pyparsing==3.2.3
 pyproj==3.7.1
 pyshp==2.3.1
