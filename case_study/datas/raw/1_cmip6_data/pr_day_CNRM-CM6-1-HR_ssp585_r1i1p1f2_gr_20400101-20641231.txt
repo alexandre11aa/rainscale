@@ -1,1 +1,119 @@
-pr_day_CNRM-CM6-1-HR_ssp585_r1i1p1f2_gr_20400101-20641231
+id: CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202|esgf-data1.llnl.gov
+
+version: 20191202
+
+access: HTTPServer,GridFTP,OPENDAP,Globus,LAS
+
+activity_drs: ScenarioMIP
+
+activity_id: ScenarioMIP
+
+cf_standard_name: precipitation_flux
+
+citation_url: http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202.json
+
+data_node: esgf-data1.llnl.gov
+
+data_specs_version: 01.00.21
+
+dataset_id_template_: %(mip_era)s.%(activity_drs)s.%(institution_id)s.%(source_id)s.%(experiment_id)s.%(member_id)s.%(table_id)s.%(variable_id)s.%(grid_label)s
+
+datetime_start: 2015-01-01T12:00:00Z
+
+datetime_stop: 2100-12-31T12:00:00Z
+
+directory_format_template_: %(root)s/%(mip_era)s/%(activity_drs)s/%(institution_id)s/%(source_id)s/%(experiment_id)s/%(member_id)s/%(table_id)s/%(variable_id)s/%(grid_label)s/%(version)s
+
+east_degrees: 359.5
+
+experiment_id: ssp585
+
+experiment_title: update of RCP8.5 based on SSP5
+
+frequency: day
+
+further_info_url: https://furtherinfo.es-doc.org/CMIP6.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.none.r1i1p1f2
+
+geo: ENVELOPE(-180.0, -0.5, 89.61779, -89.61779),ENVELOPE(0.0, 180.0, 89.61779, -89.61779)
+
+geo_units: degrees_east
+
+grid: data regridded to a 359 gaussian grid (360x720 latlon) from a native atmosphere T359l reduced gaussian grid
+
+grid_label: gr
+
+index_node: esgf-node.llnl.gov
+
+instance_id: CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202
+
+institution_id: CNRM-CERFACS
+
+latest: true
+
+master_id: CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr
+
+member_id: r1i1p1f2
+
+mip_era: CMIP6
+
+model_cohort: Registered
+
+nominal_resolution: 50 km
+
+north_degrees: 89.61779
+
+number_of_aggregations: 2
+
+number_of_files: 4
+
+pid: hdl:21.14100/cb39fa91-0398-34b5-bfe7-82277b75543b
+
+product: model-output
+
+project: CMIP6
+
+realm: atmos
+
+replica: true
+
+size: 24865341491
+
+source_id: CNRM-CM6-1-HR
+
+source_type: AOGCM
+
+south_degrees: -89.61779
+
+sub_experiment_id: none
+
+table_id: day
+
+title: CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr
+
+type: Dataset
+
+url: http://esgf-data1.llnl.gov/thredds/catalog/esgcet/26/CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202.xml#CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202|application/xml+thredds|THREDDS,http://esgf-data1.llnl.gov/las/getUI.do?catid=BDA7D633E3E4065F7F7D07B5DF1F5873_ns_CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202|application/las|LAS
+
+variable: pr
+
+variable_id: pr
+
+variable_long_name: Precipitation
+
+variable_units: kg m-2 s-1
+
+variant_label: r1i1p1f2
+
+west_degrees: 0
+
+xlink: http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.ScenarioMIP.CNRM-CERFACS.CNRM-CM6-1-HR.ssp585.r1i1p1f2.day.pr.gr.v20191202.json|Citation|citation,http://hdl.handle.net/hdl:21.14100/cb39fa91-0398-34b5-bfe7-82277b75543b|PID|pid
+
+_version_: 1653712419592077300
+
+retracted: false
+
+_timestamp: 2019-12-23T12:11:01.287Z
+
+score: 1
+
+OBS: Para leitura do caderno "1_cmip6_data.ipynb", o arquivo deve estar no formato NC (.nc) 

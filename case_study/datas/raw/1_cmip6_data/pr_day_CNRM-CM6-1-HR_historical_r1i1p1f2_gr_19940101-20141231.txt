@@ -1,1 +1,119 @@
-pr_day_CNRM-CM6-1-HR_historical_r1i1p1f2_gr_19940101-20141231
+id: CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021|esgf-data1.llnl.gov
+
+version: 20191021
+
+access: HTTPServer,GridFTP,OPENDAP,Globus,LAS
+
+activity_drs: CMIP
+
+activity_id: CMIP
+
+cf_standard_name: precipitation_flux
+
+citation_url: http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021.json
+
+data_node: esgf-data1.llnl.gov
+
+data_specs_version: 01.00.21
+
+dataset_id_template_: %(mip_era)s.%(activity_drs)s.%(institution_id)s.%(source_id)s.%(experiment_id)s.%(member_id)s.%(table_id)s.%(variable_id)s.%(grid_label)s
+
+datetime_start: 1850-01-01T12:00:00Z
+
+datetime_stop: 2014-12-31T12:00:00Z
+
+directory_format_template_: %(root)s/%(mip_era)s/%(activity_drs)s/%(institution_id)s/%(source_id)s/%(experiment_id)s/%(member_id)s/%(table_id)s/%(variable_id)s/%(grid_label)s/%(version)s
+
+east_degrees: 359.5
+
+experiment_id: historical
+
+experiment_title: all-forcing simulation of the recent past
+
+frequency: day
+
+further_info_url: https://furtherinfo.es-doc.org/CMIP6.CNRM-CERFACS.CNRM-CM6-1-HR.historical.none.r1i1p1f2
+
+geo: ENVELOPE(-180.0, -0.5, 89.61779, -89.61779),ENVELOPE(0.0, 180.0, 89.61779, -89.61779)
+
+geo_units: degrees_east
+
+grid: data regridded to a 359 gaussian grid (360x720 latlon) from a native atmosphere T359l reduced gaussian grid
+
+grid_label: gr
+
+index_node: esgf-node.llnl.gov
+
+instance_id: CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021
+
+institution_id: CNRM-CERFACS
+
+latest: true
+
+master_id: CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr
+
+member_id: r1i1p1f2
+
+mip_era: CMIP6
+
+model_cohort: Registered
+
+nominal_resolution: 50 km
+
+north_degrees: 89.61779
+
+number_of_aggregations: 2
+
+number_of_files: 7
+
+pid: hdl:21.14100/806c1189-8371-344a-bed4-b4a575d5fefd
+
+product: model-output
+
+project: CMIP6
+
+realm: atmos
+
+replica: true
+
+size: 47676611746
+
+source_id: CNRM-CM6-1-HR
+
+source_type: AOGCM
+
+south_degrees: -89.61779
+
+sub_experiment_id: none
+
+table_id: day
+
+title: CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr
+
+type: Dataset
+
+url: http://esgf-data1.llnl.gov/thredds/catalog/esgcet/13/CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021.xml#CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021|application/xml+thredds|THREDDS,http://esgf-data1.llnl.gov/las/getUI.do?catid=BDA7D633E3E4065F7F7D07B5DF1F5873_ns_CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021|application/las|LAS
+
+variable: pr
+
+variable_id: pr
+
+variable_long_name: Precipitation
+
+variable_units: kg m-2 s-1
+
+variant_label: r1i1p1f2
+
+west_degrees: 0
+
+xlink: http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.CMIP.CNRM-CERFACS.CNRM-CM6-1-HR.historical.r1i1p1f2.day.pr.gr.v20191021.json|Citation|citation,http://hdl.handle.net/hdl:21.14100/806c1189-8371-344a-bed4-b4a575d5fefd|PID|pid
+
+_version_: 1649800232804810800
+
+retracted: false
+
+_timestamp: 2019-11-10T07:48:29.227Z
+
+score: 1
+
+OBS: Para leitura do caderno "1_cmip6_data.ipynb", o arquivo deve estar no formato NC (.nc) 
