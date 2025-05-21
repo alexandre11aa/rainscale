@@ -28,35 +28,53 @@ const paisSelect = document.getElementById('paisSelect');
 const regiaoSelect = document.getElementById('regiaoSelect');
 const modeloSelect = document.getElementById('modeloSelect');
 
+const regiaoDiv = document.getElementById('regiaoDiv');
+const modeloDiv = document.getElementById('modeloDiv');
+
 const allRegioes = Array.from(regiaoSelect.options);
 const allModelos = Array.from(modeloSelect.options);
 
 paisSelect.addEventListener('change', function () {
     const selectedPaisId = this.value;
 
-    regiaoSelect.innerHTML = '<option value="">Escolher região</option>';
-    allRegioes.forEach(opt => {
-        if (opt.dataset.pais === selectedPaisId) {
-            regiaoSelect.appendChild(opt.cloneNode(true));
-        }
-    });
-
-    regiaoSelect.disabled = !selectedPaisId;
-    modeloSelect.innerHTML = '<option value="">Escolher modelo</option>';
+    // Reset região
+    regiaoSelect.innerHTML = '<option selected disabled>Escolher região</option>';
+    modeloSelect.innerHTML = '<option selected disabled>Escolher modelo</option>';
     modeloSelect.disabled = true;
+    modeloDiv.classList.add('d-none'); // esconde modelo
+
+    if (selectedPaisId) {
+        allRegioes.forEach(opt => {
+            if (opt.dataset.pais === selectedPaisId) {
+                regiaoSelect.appendChild(opt.cloneNode(true));
+            }
+        });
+        regiaoSelect.disabled = false;
+        regiaoDiv.classList.remove('d-none'); // mostra região
+    } else {
+        regiaoSelect.disabled = true;
+        regiaoDiv.classList.add('d-none');
+    }
 });
 
 regiaoSelect.addEventListener('change', function () {
     const selectedRegiaoId = this.value;
 
-    modeloSelect.innerHTML = '<option value="">Escolher modelo</option>';
-    allModelos.forEach(opt => {
-        if (opt.dataset.regiao === selectedRegiaoId) {
-            modeloSelect.appendChild(opt.cloneNode(true));
-        }
-    });
+    // Reset modelo
+    modeloSelect.innerHTML = '<option selected disabled>Escolher modelo</option>';
 
-    modeloSelect.disabled = !selectedRegiaoId;
+    if (selectedRegiaoId) {
+        allModelos.forEach(opt => {
+            if (opt.dataset.regiao === selectedRegiaoId) {
+                modeloSelect.appendChild(opt.cloneNode(true));
+            }
+        });
+        modeloSelect.disabled = false;
+        modeloDiv.classList.remove('d-none'); // mostra modelo
+    } else {
+        modeloSelect.disabled = true;
+        modeloDiv.classList.add('d-none');
+    }
 });
 
 

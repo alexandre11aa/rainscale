@@ -11,35 +11,35 @@
             <option selected>{{ pais }}</option>
         {% else %}
             <select class="form-select" id="paisSelect">
-            <option selected>Escolher país</option>
+            <option selected disabled>Escolher país</option>
             {% for pais in paises %}
                 <option value="{{ pais.id }}">{{ pais.nome }}</option>
             {% endfor %}
         {% endif %}
         </select>
     </div>
-
-    <div class="mb-3">
+    
+    <div class="mb-3 {% if not map %}d-none{% endif %}" id="regiaoDiv">
         <label for="regiaoSelect" class="form-label">Região</label>
-        <select class="form-select" id="regiaoSelect" disabled>
+        <select class="form-select" id="regiaoSelect" {% if map %}disabled{% else %}disabled{% endif %}>
         {% if map == True %}
             <option selected>{{ regiao }}</option>
         {% else %}
-            <option selected>Escolher região</option>
+            <option selected disabled>Escolher região</option>
             {% for regiao in regioes %}
                 <option value="{{ regiao.id }}" data-pais="{{ regiao.pais_id }}">{{ regiao.nome }}</option>
             {% endfor %}
         {% endif %}
         </select>
     </div>
-
-    <div class="mb-3">
+    
+    <div class="mb-3 {% if not map %}d-none{% endif %}" id="modeloDiv">
         <label for="modeloSelect" class="form-label">Modelo</label>
-        <select class="form-select" id="modeloSelect" disabled>
+        <select class="form-select" id="modeloSelect" {% if map %}disabled{% else %}disabled{% endif %}>
         {% if map == True %}
             <option selected>{{ modelo }}</option>
         {% else %}
-            <option selected>Escolher modelo</option>
+            <option selected disabled>Escolher modelo</option>
             {% for modelo in modelos %}
                 <option value="{{ modelo.id }}" data-regiao="{{ modelo.regiao_id }}">{{ modelo.nome }}</option>
             {% endfor %}
