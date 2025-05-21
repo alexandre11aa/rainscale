@@ -1,6 +1,6 @@
 ACTIVITY_CHOICES = [
     ('UNK', 'Desconhecido'),
-    ('ScenarioMIP', 'CMIP')
+    ('CMIP', 'ScenarioMIP')
 ]
 
 DATA_NODE_CHOICES = [
@@ -25,7 +25,8 @@ SOURCE_TYPE_CHOICES = [
 
 EXPERIMENT_CHOICES = [
     ('UNK', 'Desconhecido'),
-    ('ssp585', 'SSP5-85')
+    ('ssp585', 'SSP5-85'),
+    ('historical', 'Historical')
 ]
 
 SUB_EXPERIMENT_CHOICES = [

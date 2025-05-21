@@ -1,19 +1,22 @@
+# Configuração do Django
+
 import os
 import django
 
-# Configuração do Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 django.setup()
 
-# Registrando Dados
 from django.core.exceptions import ObjectDoesNotExist
+
 from user.models import CustomUser
+
+# Registrando Dados
 
 def create_superuser_if_not_exists(nome, email, password):
     '''
     Cria superusuário ao iniciar container caso ele não exista
     '''
-    
+
     # Tenta obter o colaborador pelo email
     try:
         existing_colaborador = CustomUser.objects.get(email=email)
