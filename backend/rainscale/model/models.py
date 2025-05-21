@@ -33,7 +33,7 @@ class Model(BaseModel):
         temporalidade (str): Frequência temporal dos dados;
         variavel (str): Identificador da variável;
         variavel_unidade (str): Unidade da variável;
-        pontos [.csv] (file): Pontos Usados na Espacialização do Modelo;
+        pontos [.csv] (file): Pontos Usados na Espacialização do Modelo (lat, lon, fonte);
         modelo [.pkl ou .h5] (file): Modelo de Aprendizado de Máquina;
         caderno [.ipynb] (file): Caderno de Desenvolvimento do Modelo;
         repositorio (str): Repositório do Modelo;

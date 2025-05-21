@@ -37,6 +37,7 @@ except ObjectDoesNotExist:
     region = Region.objects.create(
         nacao=nation,
         nome="Paraíba",
+        contorno=os.path.join('case_study', 'datas', 'external', 'brazil-paraiba.geojson'),
         lat_maxima=-5.25,
         lat_minima=-8.32,
         lon_maxima=-34.79,
@@ -128,7 +129,7 @@ except ObjectDoesNotExist:
         temporalidade='mon',
         variavel='pr_acum',
         variavel_unidade='mm',
-        pontos='',
+        pontos=os.path.join('case_study', 'datas', 'raw', '2_aesa_data', 'postos_pluviometricos_aesa_cmip6.csv'),
         modelo=os.path.join('case_study', 'models', 'statistical_downscaling_spatialization.joblib'),
         caderno='',
         repositorio='https://github.com/alexandre11aa/rainscale/tree/main/case_study',

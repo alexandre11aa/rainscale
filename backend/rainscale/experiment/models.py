@@ -74,8 +74,8 @@ class Simulation(BaseModel):
     date_init = models.DateField('Data Inicial')
     date_end = models.DateField('Data Final')
 
-    link = models.CharField('Caminho para Dados Locais', max_length=255)
-    ref = models.CharField('Referência dos Dados Locais', max_length=255)
+    link = models.CharField('Caminho para Dados do Simulação', max_length=255)
+    ref = models.CharField('Referência dos Dados Simulação', max_length=255)
 
     def __str__(self):
         return f"{self.nome}"
