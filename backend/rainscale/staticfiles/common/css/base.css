@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
-    color: #ffffff;
+    background: linear-gradient(to bottom, #e0f2ff, #ffffff);
+    color: #081c4c;
     overflow-x: hidden;
 }
 

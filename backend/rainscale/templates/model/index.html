@@ -20,7 +20,6 @@
         <!-- Sidebar -->
         {% include 'partials/_sidebar.html' %}
 
-        <!-- Gota -->
         <div style="
             height: 100vh;
             display: flex;
@@ -30,15 +29,24 @@
             text-align: center;
             color: #081c4c;
             position: relative;
+            padding: 0 5%;
         ">
-            <h1 style="margin: 0; background-color: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 12px;">
+            <h1 style="
+                font-size: 1.5vw;
+                margin: 0;
+                background-color: rgba(255,255,255,0.8);
+                padding: 1em 1.5em;
+                border-radius: 12px;
+                max-width: 90%;
+                line-height: 1.3;
+            ">
                 Obtenha séries temporais futuras de precipitação a<br>
                 partir de modelos de aprendizado de máquinas!
             </h1>
 
             <div style="height: 40px;"></div>
 
-            <img src="{% static 'common/img/rainscale_gota.png' %}" alt="Rainscale Logo" style="width: 25%; height: auto;">
+            <img src="{% static 'common/img/rainscale_gota_estante.png' %}" alt="Rainscale Logo" style="width: 45%; height: auto; border-radius: 16px;">
         </div>
 
     </div>
