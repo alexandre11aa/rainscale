@@ -15,24 +15,28 @@ class IndexView(View):
 
     def get(self, request, *args, **kwargs):
 
-        paises = [
-            {'id': 1, 'nome': 'Brasil'},
-            {'id': 2, 'nome': 'Argentina'}
-        ]
+        models = Model.all_objects.filter(is_active=True)
 
-        regioes = [
-            {'id': 1, 'nome': 'Paraíba', 'pais_id': 1},
-            {'id': 2, 'nome': 'São Paulo', 'pais_id': 1},
-            {'id': 3, 'nome': 'Buenos Aires', 'pais_id': 2},
-            {'id': 4, 'nome': 'Córdoba', 'pais_id': 2}
-        ]
+        paises, regioes, modelos = [], [], []
+        
+        for model in models:
 
-        modelos = [
-            {'id': 1, 'nome': 'Modelo A', 'regiao_id': 1},
-            {'id': 2, 'nome': 'Modelo B', 'regiao_id': 2},
-            {'id': 3, 'nome': 'Modelo C', 'regiao_id': 3},
-            {'id': 4, 'nome': 'Modelo D', 'regiao_id': 4}
-        ]
+            paises.append({
+                'id': model.regiao.nacao.id, 
+                'nome': model.regiao.nacao.nome
+            })
+
+            regioes.append({
+                'id': model.regiao.id, 
+                'nome': model.regiao.nome, 
+                'pais_id': model.regiao.nacao.id
+            })
+
+            modelos.append({
+                'id': model.id,
+                'nome': model.nome,
+                'regiao_id': model.regiao.id
+            })
 
         context = {
             'map': False,
@@ -54,13 +58,13 @@ class MapaView(View):
 
         model_id = kwargs.get('model_id')
 
-        #model = get_object_or_404(Model, id=model_id)
+        model = get_object_or_404(Model, id=model_id)
 
         context = {
             'map': True,
-            'pais': 'Brasil',
-            'regiao': 'Paraíba',
-            'modelo': 'Modelo A'
+            'pais': model.regiao.nacao.nome,
+            'regiao': model.regiao.nome,
+            'modelo': model.nome
         }
 
         return render(request, self.template_name, context)
