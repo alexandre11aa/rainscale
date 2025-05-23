@@ -1,6 +1,6 @@
 from django.views import View
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
@@ -85,6 +85,7 @@ class MapaView(View):
         
         context = {
             'map': True,
+            'model_id': model.id,
             'pais': model.regiao.nacao.nome,
             'regiao': model.regiao.nome,
             'modelo': model.nome,
@@ -104,8 +105,11 @@ class MapaView(View):
         )
 
         context['form'] = MapaForm()
-        
+
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        pass
+        
+        print(request)
+
+        return redirect('index')
