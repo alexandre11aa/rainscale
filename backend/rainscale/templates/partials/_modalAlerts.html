@@ -1,0 +1,58 @@
+{% load static %}
+
+<!---------------- Modal Alert Error --------------------->
+
+<div class="modal" tabindex="-1" id="modalAvisoError">
+  <div class="modal-dialog" style="max-width: 350px; position: fixed; bottom: 0; right: 0; margin: 0;">
+    <div class="modal-content border border-3 border-warning" style="border-radius: 0;">
+      <div class="modal-header alert-warning"
+           style="display: flex; align-items: center; gap: 1rem; position: relative; padding: 1rem;">
+
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 70px; height: 70px;">
+            <img src="{% static 'partials/img/exclamation-triangle-fill.svg' %}" alt="!"
+                 style="width: 48px; height: 48px; margin-bottom: 0.25rem;">
+            <h3 id="title_erro" class="modal-title" style="font-size: 0.95rem; margin: 0;">
+              {{title_error}}
+            </h3>
+          </div>
+
+          <div style="width: 1px; height: 70px; background-color: #ffc107;"></div>
+
+          <div style="flex-grow: 1; text-align: left;">
+            <p style="margin: 0; font-weight: 500; font-size: 0.85rem;">
+              {{text_error}}
+            </p>
+          </div>
+
+          <button id="close-modal-alert" type="button" class="btn-close"
+                  data-bs-dismiss="modal" aria-label="Close"
+                  onclick="closeModal('modalAvisoError')"
+                  style="position: absolute; top: 10px; right: 10px;">
+          </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---------------- Modal Alert Sucesso --------------------->
+
+<div class="modal" tabindex="-1" id="modalAlertSucess">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content border border-3 border-success">
+            <div class="modal-header alert-success">
+                <img src="{% static 'partials/img/check-circle-fill.svg'%}" alt="Check" class="success icon24">
+                <h3 id="title_sucess" class="modal-title">{{title_sucess}}</h3>
+                <button id="close-modal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                onclick="closeModal('modalAlertSucess')"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-center fw-medium fs-5">{{text_sucess}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Alert -->
+
+<script src="{% static 'partials/js/_modalAlerts.js' %}"></script>

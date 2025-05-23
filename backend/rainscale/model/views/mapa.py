@@ -1,19 +1,18 @@
 from django.views import View
-from django.urls import reverse_lazy
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+
+from core.common.utils import feedback_message
 
 from model.models import Model
-
 from model.forms.mapa import MapaForm
 
 
 # @method_decorator(login_required, name='dispatch')
 class MapaView(View):
     template_name = 'model/mapa.html'
-    success_url = reverse_lazy('mapa')
-    get_url = reverse_lazy('mapa')
 
     def get_datas(self, model):
 
@@ -38,7 +37,7 @@ class MapaView(View):
         dados_experimentos = []
 
         for experimento in model.simulacoes.all():
-        
+
             dados_experimentos.append((
                 experimento.nome,
                 experimento.activity,
@@ -82,7 +81,7 @@ class MapaView(View):
                 dado_local.link,
                 dado_local.ref
             ))
-        
+
         context = {
             'map': True,
             'model_id': model.id,
@@ -106,10 +105,25 @@ class MapaView(View):
 
         context['form'] = MapaForm()
 
+        context = feedback_message(request, context)
+
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        
-        print(request)
+
+        model_id = kwargs.get('model_id')
+
+        form = MapaForm(request.POST)
+
+        if form.is_valid():
+            latitude, longitude = form.get(request)
+        else:
+            messages.error(
+                request, f'ERRO|{form.errors.as_text().split("* ")[-1]}'
+            )
+
+            return redirect('mapa', model_id)
+
+        print(latitude, longitude)
 
         return redirect('index')

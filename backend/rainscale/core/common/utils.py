@@ -8,8 +8,8 @@ def feedback_message(request, dados):
         title, text = str(list(messages.get_messages(request))[0]).split('|')
 
         if list(messages.get_messages(request))[0].tags == 'success':
-            dados['title_sucess'] = title
-            dados['text_sucess']= text
+            dados['title_success'] = title
+            dados['text_success']= text
 
         else:
             dados['title_error'] = title
