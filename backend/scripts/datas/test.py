@@ -52,7 +52,7 @@ except ObjectDoesNotExist:
         source='CNRM-CM6-1-HR',
         institution='CNRM-CERFACS',
         source_type='AOGCM',
-        experiment='ssp585',
+        experiment='historical',
         sub_experiment='UNK',
         nominal_resolution='50 km',
         variant_label='r1i1p1f2',
@@ -66,8 +66,8 @@ except ObjectDoesNotExist:
         version='20191021',
         date_init=timezone.make_aware(datetime(1994, 1, 1, 0, 0, 0)),
         date_end=timezone.make_aware(datetime(2014, 12, 31, 23, 59, 59)),
-        link='',
-        ref=''
+        link='#',
+        ref='#'
     )
     simulation_historical.save()
 
@@ -92,8 +92,8 @@ except ObjectDoesNotExist:
         version='20191021',
         date_init=timezone.make_aware(datetime(2015, 1, 1, 0, 0, 0)),
         date_end=timezone.make_aware(datetime(2100, 12, 31, 23, 59, 59)),
-        link='',
-        ref=''
+        link='#',
+        ref='#'
     )
     simulation_future.save()
 
@@ -108,8 +108,8 @@ except ObjectDoesNotExist:
         lat_minima=-8.32,
         lon_maxima=-34.79,
         lon_minima=-38.10,
-        link='',
-        ref=''
+        link='#',
+        ref='#'
     )
     local_data.save()
 

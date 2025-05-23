@@ -1,11 +1,10 @@
 from django.urls import path
 
-from model.views.model import (
-    IndexView,
-    MapaView,
-    SobreView,
-    TutorialView
-)
+from model.views.index import IndexView
+from model.views.mapa import MapaView
+from model.views.sobre import SobreView
+from model.views.tutorial import TutorialView
+
 
 urlpatterns = [
 
