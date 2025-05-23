@@ -129,8 +129,8 @@ except ObjectDoesNotExist:
         temporalidade='mon',
         variavel='pr_acum',
         variavel_unidade='mm',
-        pontos=os.path.join('case_study', 'datas', 'raw', '2_aesa_data', 'postos_pluviometricos_aesa_cmip6.csv'),
-        modelo=os.path.join('case_study', 'models', 'statistical_downscaling_spatialization.joblib'),
+        pontos=None,  # 'OBS: INSERIR MANUALMENTE NO DJANGO ADMIN!'
+        modelo=None,  # 'OBS: INSERIR MANUALMENTE NO DJANGO ADMIN!'
         caderno='',
         repositorio='https://github.com/alexandre11aa/rainscale/tree/main/case_study',
         lat_maxima=-5.25,

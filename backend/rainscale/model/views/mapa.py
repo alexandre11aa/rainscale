@@ -1,10 +1,16 @@
+import joblib
+import pandas as pd
+
 from django.views import View
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 
-from core.common.utils import feedback_message
+from core.common.utils import (
+    feedback_message,
+    gerador_de_df
+)
 
 from model.models import Model
 from model.forms.mapa import MapaForm
@@ -113,10 +119,11 @@ class MapaView(View):
 
         model_id = kwargs.get('model_id')
 
-        form = MapaForm(request.POST)
+        form = MapaForm(request.POST, model_id=model_id)
 
         if form.is_valid():
-            latitude, longitude = form.get(request)
+            latitude, longitude = form.get()
+
         else:
             messages.error(
                 request, f'ERRO|{form.errors.as_text().split("* ")[-1]}'
@@ -124,6 +131,22 @@ class MapaView(View):
 
             return redirect('mapa', model_id)
 
-        print(latitude, longitude)
+        model = get_object_or_404(Model, id=model_id)
+
+        if not model.modelo:
+            messages.error(
+                request, f'ERRO|O modelo de aprendizado de máquinas ainda não está registrado no sistema. Entre em contato com a administração!'
+            )
+
+            return redirect('mapa', model_id)
+        
+        ml_model = joblib.load(model.modelo)
+
+        df = gerador_de_df(latitude, longitude, 1994, 2100)
+        df = df[model.feature_names_in_]
+
+        df['pr'] = ml_model.predict(df)
+
+        print(df)
 
         return redirect('index')
