@@ -54,13 +54,14 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'user.CustomUser'
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',  # DEFAULT
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # STATIC
+    'django.contrib.sessions.middleware.SessionMiddleware',  # DEFAULT
+    'django.middleware.common.CommonMiddleware',  # DEFAULT
+    'django.middleware.csrf.CsrfViewMiddleware',  # DEFAULT
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # DEFAULT
+    'django.contrib.messages.middleware.MessageMiddleware',  # DEFAULT
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',  # DEFAULT
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -143,6 +144,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+# GZIP + Cache otimizado
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Midia carregadas para o sistema
 MEDIA_ROOT = BASE_DIR / 'media'

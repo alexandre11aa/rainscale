@@ -6,7 +6,7 @@ def lat_limit(latitude: float, latitude_maxima: float = 90, latitude_minima: flo
     Verifica se a latitude está dentro do intervalo exigido.
     '''
 
-    if latitude_minima < -90 or latitude > latitude_maxima:
+    if latitude < latitude_minima or latitude > latitude_maxima:
         raise ValidationError(f"A latitude deve estar entre {latitude_minima} e {latitude_maxima} graus.")
     
 def lon_limit(longitude: float, longitude_maxima: float = 180, longitude_minima: float = -180):
@@ -14,5 +14,5 @@ def lon_limit(longitude: float, longitude_maxima: float = 180, longitude_minima:
     Verifica se a longitude está dentro do intervalo exigido.
     '''
 
-    if longitude_minima < -180 or longitude > longitude_maxima:
+    if longitude < longitude_minima or longitude > longitude_maxima:
         raise ValidationError(f"A longitude deve estar entre {longitude_minima} e {longitude_maxima} graus.")

@@ -29,3 +29,10 @@
   {% endif %}
 
 </div>
+
+<script>
+  window.title_error = "{{ title_error|escapejs }}";
+  window.title_success = "{{ title_success|escapejs }}";
+</script>
+
+<script src="{% static 'partials/js/_alerts.js' %}"></script>
