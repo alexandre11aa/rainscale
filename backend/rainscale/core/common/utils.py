@@ -31,8 +31,8 @@ def gerador_de_df(latitude: float, longitude: float, ano_inicial: float, ano_fin
     for ano in range(int(ano_inicial), int(ano_final) + 1):
         for mes in range(1, 13):
             dados.append({
-                'latitude': latitude,
-                'longitude': longitude,
+                'lat': latitude,
+                'lon': longitude,
                 'ano': ano,
                 'mes': mes
             })

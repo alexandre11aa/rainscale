@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-auto">
-                    <button class="btn btn-outline-secondary"
+                    <button type="button" class="btn btn-outline-secondary"
                             title="Mais informações"
                             data-bs-toggle="collapse"
                             data-bs-target="#extra-info"
@@ -163,6 +163,13 @@
         </form>
 
     </div>
+
+    <script>
+        window.latitude_central = {{ latitude_central }};
+        window.longitude_central = {{ longitude_central }};
+        window.lista_de_pontos = {{ lista_de_pontos|safe }};
+        window.fontes_unicas = {{ fontes_unicas|safe }};
+    </script>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{% static 'model/js/mapa.js' %}"></script>

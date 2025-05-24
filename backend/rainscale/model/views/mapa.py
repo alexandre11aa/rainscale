@@ -1,6 +1,10 @@
+import json
 import joblib
 import pandas as pd
 
+from io import StringIO
+
+from django.http import HttpResponse
 from django.views import View
 from django.contrib import messages
 from django.utils.decorators import method_decorator
@@ -39,6 +43,36 @@ class MapaView(View):
             model.lon_maxima,
             model.lon_minima
         )
+
+        lista_de_pontos, fontes_unicas = [], []
+        
+        if model.pontos:
+
+            df = pd.read_csv(model.pontos)
+
+            fontes_unicas = df['fonte'].unique().tolist()
+
+            cores = [
+                "#1f77b4",  # azul
+                "#ff7f0e",  # laranja
+                "#2ca02c",  # verde
+                "#d62728",  # vermelho
+                "#9467bd",  # roxo
+                "#8c564b",  # marrom
+                "#e377c2",  # rosa
+                "#7f7f7f",  # cinza
+                "#bcbd22",  # amarelo esverdeado
+                "#17becf"   # ciano
+            ]
+
+            fontes_unicas = [
+                (fonte, cores[i % len(cores)]) 
+                for i, fonte in enumerate(fontes_unicas)
+            ]
+
+            lista_de_pontos = list(
+                df.itertuples(index=False, name=None)
+            )
 
         dados_experimentos = []
 
@@ -86,7 +120,7 @@ class MapaView(View):
                 dado_local.lon_minima,
                 dado_local.link,
                 dado_local.ref
-            ))
+            ))       
 
         context = {
             'map': True,
@@ -94,6 +128,10 @@ class MapaView(View):
             'pais': model.regiao.nacao.nome,
             'regiao': model.regiao.nome,
             'modelo': model.nome,
+            'latitude_central': (model.lat_maxima + model.lat_minima) / 2,
+            'longitude_central': (model.lon_maxima + model.lon_minima) / 2,
+            'lista_de_pontos': json.dumps(lista_de_pontos),
+            'fontes_unicas': json.dumps(fontes_unicas),
             'dados_modelo': dados_modelo,
             'dados_experimentos': dados_experimentos,
             'dados_locais': dados_locais
@@ -119,34 +157,52 @@ class MapaView(View):
 
         model_id = kwargs.get('model_id')
 
-        form = MapaForm(request.POST, model_id=model_id)
+        try:
 
-        if form.is_valid():
-            latitude, longitude = form.get()
+            form = MapaForm(request.POST, model_id=model_id)
 
-        else:
+            if form.is_valid():
+                latitude, longitude = form.get()
+
+            else:
+                messages.error(
+                    request, f'ERRO|{form.errors.as_text().split("* ")[-1]}'
+                )
+
+                return redirect('mapa', model_id)
+
+            model = get_object_or_404(Model, id=model_id)
+
+            if not model.modelo:
+                messages.error(
+                    request, f'ERRO|O modelo de aprendizado de máquinas ainda não está registrado no sistema. Entre em contato com a administração!'
+                )
+
+                return redirect('mapa', model_id)
+            
+            ml_model = joblib.load(model.modelo)
+
+            df = gerador_de_df(latitude, longitude, 1994, 2100)
+            df = df[ml_model.feature_names_in_]
+
+            df['pr_acum'] = ml_model.predict(df)
+
+            csv_buffer = StringIO()
+
+            df.to_csv(csv_buffer, index=False)
+            
+            csv_buffer.seek(0)
+
+            response = HttpResponse(csv_buffer, content_type='text/csv')
+
+            response['Content-Disposition'] = f'attachment; filename="{model.nome}_{latitude}_{longitude}.csv"'
+
+            return response
+    
+        except Exception as e:
+
             messages.error(
-                request, f'ERRO|{form.errors.as_text().split("* ")[-1]}'
+                request, f'ERRO|Algum erro inesperado aconteceu, entre em contato com a administração: {e}'
             )
 
             return redirect('mapa', model_id)
-
-        model = get_object_or_404(Model, id=model_id)
-
-        if not model.modelo:
-            messages.error(
-                request, f'ERRO|O modelo de aprendizado de máquinas ainda não está registrado no sistema. Entre em contato com a administração!'
-            )
-
-            return redirect('mapa', model_id)
-        
-        ml_model = joblib.load(model.modelo)
-
-        df = gerador_de_df(latitude, longitude, 1994, 2100)
-        df = df[model.feature_names_in_]
-
-        df['pr'] = ml_model.predict(df)
-
-        print(df)
-
-        return redirect('index')

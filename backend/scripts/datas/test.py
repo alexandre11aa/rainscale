@@ -133,7 +133,7 @@ except ObjectDoesNotExist:
         modelo=None,  # 'OBS: INSERIR MANUALMENTE NO DJANGO ADMIN!'
         caderno='',
         repositorio='https://github.com/alexandre11aa/rainscale/tree/main/case_study',
-        lat_maxima=-5.25,
+        lat_maxima=-6.25,
         lat_minima=-8.32,
         lon_maxima=-34.79,
         lon_minima=-38.10,
