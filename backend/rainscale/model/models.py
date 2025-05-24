@@ -33,7 +33,7 @@ class Model(BaseModel):
         temporalidade (str): Frequência temporal dos dados;
         variavel (str): Identificador da variável;
         variavel_unidade (str): Unidade da variável;
-        pontos [.csv] (file): Pontos Usados na Espacialização do Modelo (lat, lon, fonte);
+        pontos [.csv] (file): Pontos Usados na Espacialização do Modelo;
         modelo [.joblib ou .h5] (file): Modelo de Aprendizado de Máquina;
         caderno [.ipynb] (file): Caderno de Desenvolvimento do Modelo;
         repositorio (str): Repositório do Modelo;
@@ -42,6 +42,19 @@ class Model(BaseModel):
         lat_minima (float): Latitude Mínima do Modelo;
         lon_maxima (float): Longitude Máxima do Modelo;
         lon_minima (float): Longitude Mínima do Modelo.
+    
+    Oservation 1:
+        O CSV com os pontos usados para a espacialização do modelo, armazenado 
+        no atributo *pontos*, deve conter as colunas nomeadas exatamente 
+        assim: *[lat, lon, fonte]*.
+    
+    Oservation 2:
+        O modelo treinado a partir, que será armazenado no atributo *modelo* 
+        deve ser treinado para a espacialização da variável temporal com as
+        colunas nomeadas exatamente assim: *[lat, lon, ano, mes]*.
+    
+    Oservation 3:
+        As latitudes e longitudes devem estar entre -180 e 180 graus, -90 e 90 graus.
     '''
 
     regiao = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='modelo')

@@ -4,19 +4,59 @@
 
 {% block content %}
 
+    <link rel="stylesheet" href="{% static 'model/css/tutorial.css' %}" />
+
 </head>
 
-<body style="margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+<body>
 
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-        <h1 style="font-size: 6em; margin: 0;">404</h1>
-        <p style="font-size: 1.5em; font-weight: bold; margin-top: 2px;">Página não encontrada!</p>
-        <p style="font-size: 1em; margin-top: 2px;">
-            A página que você está procurando não existe ou algum<br>
-            outro erro ocorreu, volte ao <a href="{% url 'index' %}">início</a> para obter uma nova direção!
-        </p>
+    <div class="main-container">
+
+        <div class="section">
+            <h1>Tutorial de Uso</h1>
+            <h3><span class="section-title">Passos para gerar série temporal a partir de<br>modelo de aprendizado de máquinas.</span></h3>
+        </div>
+
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 1.</h2>
+                    <p>Selecione um país, região e modelo na página <a href="{% url 'index' %}">inicial</a>, e clique em buscar.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_1.png' %}" alt="Passo 1" class="tutorial-img">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 2.</h2>
+                    <p>Escreva ou clique no mapa e obtenha uma latitude válida, dentro dos limites estabelecidos pelo modelo.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_2.png' %}" alt="Passo 2" class="tutorial-img">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 3.</h2>
+                    <p>Escreva ou clique no mapa e obtenha uma longitude válida, dentro dos limites estabelecidos pelo modelo.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_3.png' %}" alt="Passo 3" class="tutorial-img">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 4.</h2>
+                    <p>Clique no botão que permite o download do CSV da série temporal gerada para a localidade escolhida.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_4.png' %}" alt="Passo 4" class="tutorial-img">
+            </div>
+        </div>
+
     </div>
-
-    <img src="{% static 'common/img/gota_triste.png' %}" alt="Rainscale Logo" style="width: 8%; height: auto; margin-bottom: 40px;">
 
 {% endblock content %}
