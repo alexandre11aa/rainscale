@@ -10,9 +10,7 @@ db.sqlite3
 *.bak 
 
 # Ignore only the Django Admin static files
-/api_freebible/staticfiles/admin/
-/api_freebible/staticfiles/drf-yasg/
-/api_freebible/staticfiles/rest_framework/
+# staticfiles
 
 # If you are using PyCharm # 
 # User-specific stuff

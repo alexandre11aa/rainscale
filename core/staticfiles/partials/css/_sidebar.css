@@ -92,7 +92,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        overflow: hidden; /* evita rolagem com sidebar aberta */
+        overflow: auto; /* evita rolagem com sidebar aberta */
     }
 
     .sidebar {
@@ -114,7 +114,7 @@
     }
 
     .sidebar-toggle {
-        top: calc(300px + 10px); /* abaixo do header */
+        top: calc(375px + 10px); /* abaixo do header */
         left: 100vw;
         transform: translateX(-100%) translateY(0);
         border-radius: 1.5px;
@@ -123,7 +123,7 @@
 
     .sidebar.collapsed + .sidebar-toggle {
         left: 0;
-        top: calc(50px + 10px);
+        top: calc(375px + 10px);
         transform: translateY(0);
     }
 }

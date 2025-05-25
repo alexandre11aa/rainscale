@@ -74,7 +74,7 @@ $ git clone https://github.com/alexandre11aa/rainscale.git
 2. Siga para a branch `prod`:
 
 ```shell
-$ git checkout main
+$ git checkout prod
 ```
 
 3. Declare um novo `DEBUG` em *core/core/settings.py*:
