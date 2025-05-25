@@ -21,19 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'change-me')
+SECRET_KEY = "django-insecure-ap2ew2gw*#8!lg0lh9qp7*901pa5l@f7!i=f!s)fa)2p%nuk=q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.getenv('DEBUG', 0)))
+DEBUG = True
 
-# ALLOWED_HOSTS = [
-#     h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
-#     if h.strip()
-# ]
-
+ALLOWED_HOSTS = ['Rainscale.pythonanywhere.com']
 ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,14 +48,13 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'user.CustomUser'
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',  # DEFAULT
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # STATIC
-    'django.contrib.sessions.middleware.SessionMiddleware',  # DEFAULT
-    'django.middleware.common.CommonMiddleware',  # DEFAULT
-    'django.middleware.csrf.CsrfViewMiddleware',  # DEFAULT
-    'django.contrib.auth.middleware.AuthenticationMiddleware',  # DEFAULT
-    'django.contrib.messages.middleware.MessageMiddleware',  # DEFAULT
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',  # DEFAULT
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -90,12 +83,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE', 'change-me'),
-        'NAME': os.getenv('POSTGRES_DB', 'change-me'),
-        'USER': os.getenv('POSTGRES_USER', 'change-me'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'change-me'),
-        'HOST': os.getenv('POSTGRES_HOST', 'change-me'),
-        'PORT': os.getenv('POSTGRES_PORT', 'change-me'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -144,9 +133,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-
-# GZIP + Cache otimizado
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Midia carregadas para o sistema
 MEDIA_ROOT = BASE_DIR / 'media'
