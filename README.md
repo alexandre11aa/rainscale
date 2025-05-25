@@ -111,16 +111,27 @@ $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
 
-7. Faça as migrações do banco de dados e colete os arquivos estáticos:
+7. Faça as migrações do banco de dados:
 
 ```shel
 $ python3 manage.py migrate
 $ python3 manage.py makemigrations
+```
+
+8. Colete os arquivos estáticos:
+
+```shel
 $ python3 manage.py collectstatic
 ```
 
-8. Inicie o servidor local Django:
+9. Inicie o servidor local Django:
 
 ```shell
 $ python3 manage.py runserver
+```
+
+10. Acesse a aplicação no navegador:
+
+```shell
+http://localhost:8000
 ```
