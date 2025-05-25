@@ -86,3 +86,44 @@
 .sidebar.collapsed + .sidebar-toggle {
     left: 0;
 }
+
+@media (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* evita rolagem com sidebar aberta */
+    }
+
+    .sidebar {
+        width: 100vw;
+        height: calc(100vh - 50px); /* ocupa a altura total menos o header */
+        top: 50px; /* começa abaixo do header */
+        left: 0;
+        z-index: 1050;
+        border-right: none;
+        border-bottom: none;
+        position: fixed;
+    }
+
+    .sidebar.collapsed {
+        width: 0;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .sidebar-toggle {
+        top: calc(300px + 10px); /* abaixo do header */
+        left: 100vw;
+        transform: translateX(-100%) translateY(0);
+        border-radius: 1.5px;
+        z-index: 1051;
+    }
+
+    .sidebar.collapsed + .sidebar-toggle {
+        left: 0;
+        top: calc(50px + 10px);
+        transform: translateY(0);
+    }
+}

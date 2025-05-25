@@ -33,3 +33,24 @@
 .custom-navbar a:hover {
     color: #e2e6ea;
 }
+
+@media (max-width: 767.98px) {
+    /* Reduz o tamanho da logo */
+    .navbar-brand img {
+        height: 25px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    /* Reduz fonte e padding dos botões */
+    .custom-login-btn {
+        font-size: 0.875rem;
+        padding: 6px 10px;
+    }
+
+    /* Reduz o espaçamento entre os botões */
+    .custom-btn-group {
+        gap: 8px;
+        margin-right: 10px;
+    }
+}

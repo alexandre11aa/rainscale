@@ -165,15 +165,24 @@ input[type="number"] {
     color: #ffffff;
     padding: 4px 10px;
     font-size: 0.9rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+#extra-info .table td a {
+    color: #007bff; /* ou outro tom que combine com o seu layout */
+    text-decoration: underline;
+    display: inline-block;
+    max-width: 100%;
 }
 
 #extra-info a {
-    color: #007bff; /* Link azul claro */
+    color: #007bff;
     text-decoration: underline;
 }
 
 #extra-info a:hover {
-    color: #007bff;
+    text-decoration: underline;
 }
 
 #extra-info .card-footer {
