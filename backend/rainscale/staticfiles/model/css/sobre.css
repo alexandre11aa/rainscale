@@ -67,6 +67,11 @@ a:hover {
     text-decoration: underline;
 }
 
+.break-word {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
 /* Responsividade extra para telas pequenas */
 @media (max-width: 500px) {
     .main-container {
