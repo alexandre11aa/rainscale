@@ -135,3 +135,9 @@ $ python3 manage.py runserver
 ```shell
 http://localhost:8000
 ```
+
+## 🌐 Acesso Online
+
+A aplicação está hospedada no PythonAnywhere, podendo ser acessada através de:
+
+🔗 rainscale.pythonanywhere.com
