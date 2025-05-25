@@ -69,11 +69,11 @@ rainscale/
 
 **Como usar**
 
-Na tela inicial, você pode:
+1. Na página inicial, selecione e busque um modelo a partir de seu país e região;  
 
-1. Selecionar um modelo a partir de seu país e região;
-2. Digitar uma latitude e longitude ou às obtê-las pelo mapa interativo;
-3. Obter o CSV da série temporal de precipitação para a localidade escolhida.
+2. Na página do modelo, digite uma latitude e longitude ou às obtenha pelo mapa interativo;  
+
+3. Por fim, obtenha o CSV da série temporal de precipitação para a localidade escolhida.
 
 ## 🚀 Como executar localmente
 
