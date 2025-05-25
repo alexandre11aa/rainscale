@@ -91,13 +91,19 @@ Na tela inicial, você pode:
 $ git clone https://github.com/alexandre11aa/rainscale.git
 ```
 
-2. Suba os containers:
+2. Siga para a branch `main`:
+
+```shell
+$ git checkout main
+```
+
+3. Suba os containers:
 
 ```shell
 $ docker-compose up --build
 ```
 
-3. Acesse a aplicação no navegador:
+4. Acesse a aplicação no navegador:
 
 ```shell
 http://localhost:8000
