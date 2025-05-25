@@ -13,8 +13,8 @@ collectstatic.sh
 migrate.sh
 
 # Injeta os dados teste (OPCIONAL)
-python manage.py shell < /scripts/datas/user.py
-python manage.py shell < /scripts/datas/test.py
+# python manage.py shell < /scripts/datas/user.py
+# python manage.py shell < /scripts/datas/test.py
 
 # Inicia o servidor de desenvolvimento do Django
 runserver.sh
