@@ -119,3 +119,9 @@ A pasta `case_study/` contém a documentação técnica e os notebooks utilizado
 4. Treinamento e validação do modelo;
 5. Métricas de desempenho;
 6. Justificativas do modelo final utilizado.
+
+## 🌐 Acesso Online
+
+A aplicação está hospedada no PythonAnywhere, podendo ser acessada através de:
+
+🔗 rainscale.pythonanywhere.com

@@ -23,6 +23,7 @@
     margin: calc(8vh - 50px);
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 1.5rem;
     background-color: #1e1e1e;
     border-radius: 3px;
     display: flex;
@@ -183,16 +184,4 @@ input[type="number"] {
 
 #extra-info a:hover {
     text-decoration: underline;
-}
-
-#extra-info .card-footer {
-    background-color: #f4f4f9;
-    color: #f4f4f9;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 0px solid #f4f4f9;
-    border-radius: 0px;
-    margin-top: -1px;
-    box-shadow: none;
 }
