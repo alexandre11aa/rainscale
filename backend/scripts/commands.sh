@@ -4,7 +4,7 @@
 set -e
 
 # Espera o PostgreSQL estar pronto para aceitar conexões
-wait_psql.sh
+# wait_psql.sh
 
 # Coleta os arquivos estáticos do Django
 collectstatic.sh

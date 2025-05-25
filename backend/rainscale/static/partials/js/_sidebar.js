@@ -6,21 +6,49 @@ const sidebarToggle = document.querySelector('.sidebar-toggle');
 const toggleBtn = sidebarToggle;
 
 sidebarToggle.addEventListener('click', () => {
-
     // Alterna a classe 'collapsed' no sidebar
     sidebar.classList.toggle('collapsed');
 
     // Ajusta o margin-left da main-container de acordo com o estado do sidebar
     if (sidebar.classList.contains('collapsed')) {
-        mainContainer.style.marginLeft = '0';  // Quando o sidebar é recolhido, margin-left é 0
-        toggleBtn.textContent = '⮞';  // Alterando o texto do botão
+        mainContainer.style.marginLeft = '0';
+
+        // Altera o ícone para "chevron-right"
+        toggleBtn.querySelector('i').classList.remove('bi-chevron-left');
+        toggleBtn.querySelector('i').classList.add('bi-chevron-right');
 
     } else {
-        mainContainer.style.marginLeft = '251px';  // Quando o sidebar está expandido, margin-left é 251px
-        toggleBtn.textContent = '⮜';  // Alterando o texto do botão
+        mainContainer.style.marginLeft = '251px';
+
+        // Altera o ícone para "chevron-left"
+        toggleBtn.querySelector('i').classList.remove('bi-chevron-right');
+        toggleBtn.querySelector('i').classList.add('bi-chevron-left');
+    }
+
+    // Atualiza o mapa caso ele exista
+    if (typeof map !== 'undefined') {
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 500); // pequeno delay para garantir que o layout foi aplicado
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth <= 768) {
+        const sidebar = document.querySelector('.sidebar');
+        const toggleButton = document.getElementById('sidebarToggle');
+
+        // Garante que a sidebar esteja aberta inicialmente
+        sidebar.classList.remove('collapsed');
+
+        // Após 3 segundos, simula o clique no botão para recolher a sidebar
+        setTimeout(() => {
+            if (toggleButton) {
+                toggleButton.click();
+            }
+        }, 250); // 3 segundos
+    }
+});
 
 // SCRIPT PARA SELECIONADOS DINAMICAMENTE
 

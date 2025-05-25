@@ -12,19 +12,20 @@ services:
       - ./data/web/media:/data/web/media/
     env_file:
       - ./backend/dotenv_files/.env
-    depends_on:
-      - psql
+    # depends_on:
+    #   - psql
     networks:
       - network
-  psql:
-    container_name: psql
-    image: postgres:13
-    volumes:
-      - ./data/postgres/data:/var/lib/postgresql/data/
-    env_file:
-      - ./backend/dotenv_files/.env
-    networks:
-      - network
+  
+  # psql:
+  #   container_name: psql
+  #   image: postgres:13
+  #   volumes:
+  #     - ./data/postgres/data:/var/lib/postgresql/data/
+  #   env_file:
+  #     - ./backend/dotenv_files/.env
+  #   networks:
+  #     - network
 
 networks:
   network:
