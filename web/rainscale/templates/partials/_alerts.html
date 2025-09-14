@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  
+  {% if title_error %}
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toast_error">
+    <div class="toast-header">
+      <img src="{% static 'partials/img/_alerts/exclamation-triangle-fill.svg' %}" alt="!" class="rounded me-2 warning icon16">
+      <strong class="me-auto">{{ title_error }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      {{ text_error }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if title_success %}
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" id="toast_success">
+    <div class="toast-header">
+      <img src="{% static 'partials/img/_alerts/check-circle-fill.svg' %}" alt="✓" class="rounded me-2 success icon16">
+      <strong class="me-auto">{{ title_success }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      {{ text_success }}
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+
+<script>
+  window.title_error = "{{ title_error|escapejs }}";
+  window.title_success = "{{ title_success|escapejs }}";
+</script>
+
+<script src="{% static 'partials/js/_alerts.js' %}"></script>

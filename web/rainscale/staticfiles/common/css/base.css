@@ -1,0 +1,12 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #e0f2ff, #ffffff);
+    color: #081c4c;
+    overflow-x: hidden;
+}
+
+.content {
+    margin-left: 250px;
+    margin-top: 56px;
+    padding: 2rem;
+}

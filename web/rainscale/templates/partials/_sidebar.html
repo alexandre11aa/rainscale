@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="sidebar" id="sidebar">
+
+    <h5></h5>
+
+    <div class="mb-3">
+        <label for="paisSelect" class="form-label">País</label>
+        {% if map == True %}
+            <select class="form-select" id="paisSelect" disabled>
+            <option selected>{{ pais }}</option>
+        {% else %}
+            <select class="form-select" id="paisSelect">
+            <option selected disabled>Escolher país</option>
+            {% for pais in paises %}
+                <option value="{{ pais.id }}">{{ pais.nome }}</option>
+            {% endfor %}
+        {% endif %}
+        </select>
+    </div>
+    
+    <div class="mb-3 {% if not map %}d-none{% endif %}" id="regiaoDiv">
+        <label for="regiaoSelect" class="form-label">Região</label>
+        <select class="form-select" id="regiaoSelect" {% if map %}disabled{% else %}disabled{% endif %}>
+        {% if map == True %}
+            <option selected>{{ regiao }}</option>
+        {% else %}
+            <option selected disabled>Escolher região</option>
+            {% for regiao in regioes %}
+                <option value="{{ regiao.id }}" data-pais="{{ regiao.pais_id }}">{{ regiao.nome }}</option>
+            {% endfor %}
+        {% endif %}
+        </select>
+    </div>
+    
+    <div class="mb-3 {% if not map %}d-none{% endif %}" id="modeloDiv">
+        <label for="modeloSelect" class="form-label">Modelo</label>
+        <select class="form-select" id="modeloSelect" {% if map %}disabled{% else %}disabled{% endif %}>
+        {% if map == True %}
+            <option selected>{{ modelo }}</option>
+        {% else %}
+            <option selected disabled>Escolher modelo</option>
+            {% for modelo in modelos %}
+                <option value="{{ modelo.id }}" data-regiao="{{ modelo.regiao_id }}">{{ modelo.nome }}</option>
+            {% endfor %}
+        {% endif %}
+        </select>
+    </div>
+
+    <div class="d-grid mt-4 mb-4">
+        {% if map == False %}
+            <a href="#" class="btn btn-primary" id="modeloBuscar">Buscar</a>
+        {% endif %}
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="d-grid">
+        <a href="{% url 'tutorial' %}" class="btn btn-footer">Como Usar?</a>
+    </div>
+</div>
+
+<div id="sidebarToggle" class="sidebar-toggle"><i class="bi bi-chevron-left"></i></div>
+
+<script src="{% static 'partials/js/_sidebar.js' %}"></script>

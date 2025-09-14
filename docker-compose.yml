@@ -1,17 +1,17 @@
 services:
   rainscale:
-    container_name: backend
+    container_name: rainscale
     build:
       context: .
-      dockerfile: Dockerfile.backend
+      dockerfile: Dockerfile.web
     ports:
       - 8000:8000
     volumes:
-      - ./backend/rainscale:/rainscale
+      - ./web/rainscale:/rainscale
       - ./data/web/static:/data/web/static/
       - ./data/web/media:/data/web/media/
     env_file:
-      - ./backend/dotenv_files/.env
+      - ./web/dotenv_files/.env
     # depends_on:
     #   - psql
     networks:
@@ -23,7 +23,7 @@ services:
   #   volumes:
   #     - ./data/postgres/data:/var/lib/postgresql/data/
   #   env_file:
-  #     - ./backend/dotenv_files/.env
+  #     - ./web/dotenv_files/.env
   #   networks:
   #     - network
 

@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+</head>
+
+<body style="margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="font-size: 6em; margin: 0;">500</h1>
+        <p style="font-size: 1.5em; font-weight: bold; margin-top: 2px;">Erro interno no servidor!</p>
+        <p style="font-size: 1em; margin-top: 2px;">
+            Algo deu errado do nosso lado,<br>
+            tente novamente mais tarde ou volte ao <a href="{% url 'inicio' %}">início</a>.
+        </p>
+    </div>
+
+    <img src="{% static 'common/img/gota_triste.png' %}" alt="Rainscale Logo" style="width: 8%; height: auto; margin-bottom: 40px;">
+
+{% endblock content %}

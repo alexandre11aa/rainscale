@@ -1,0 +1,64 @@
+{% extends 'common/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <title>Rainscale | Tutorial</title>
+
+    <link rel="stylesheet" href="{% static 'model/css/tutorial.css' %}" />
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="section">
+            <h1>Tutorial de Uso</h1>
+            <h3><span class="section-title">Passos para gerar série temporal a partir de<br>modelo de aprendizado de máquinas.</span></h3>
+        </div>
+
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 1.</h2>
+                    <p>Selecione um país, região e modelo na página <a href="{% url 'index' %}">inicial</a>, e clique em buscar.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_1.png' %}" alt="Passo 1" class="tutorial-img">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 2.</h2>
+                    <p>Escreva ou clique no mapa e obtenha uma latitude válida, dentro dos limites estabelecidos pelo modelo.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_2.png' %}" alt="Passo 2" class="tutorial-img">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 3.</h2>
+                    <p>Escreva ou clique no mapa e obtenha uma longitude válida, dentro dos limites estabelecidos pelo modelo.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_3.png' %}" alt="Passo 3" class="tutorial-img">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-content">
+                <div class="text">
+                    <h2>Passo 4.</h2>
+                    <p>Clique no botão que permite o download do CSV da série temporal gerada para a localidade escolhida.</p>
+                </div>
+                <img src="{% static 'model/img/tutorial/passo_4.png' %}" alt="Passo 4" class="tutorial-img">
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}
