@@ -8,9 +8,8 @@ Projeto containerizado com Docker + Docker Compose, usando SQLite como banco de 
 
 ```shell
 rainscale/
-├── backend/               # Código-fonte do site Django
-├── case_study/            # Estudo de caso de geração de modelos
-├── data/                  # Arquivos e dados usados no sistema
+├── research/              # Estudo de caso de geração de modelos
+├── web/                   # Código-fonte do site Django
 ├── docker-compose.yml     # Orquestração dos containers
 ├── Dockerfile.backend     # Dockerfile do projeto
 ├── LICENSE
@@ -111,7 +110,7 @@ http://localhost:8000
 
 ## 📚 Estudo de Caso
 
-A pasta `case_study/` contém a documentação técnica e os notebooks utilizados na criação do modelo de aprendizado de máquina, incluindo:
+A pasta `research/` contém a documentação técnica e os notebooks utilizados na criação do modelo de aprendizado de máquina, incluindo:
 
 1. Coleta dos dados;
 2. Pré-processamento de dados;
