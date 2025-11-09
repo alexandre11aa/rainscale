@@ -6,7 +6,7 @@ Este projeto implementa um modelo de aprendizado de máquina (AM) para realizar 
 
 A estrutura geral do projeto é apresentada abaixo:
 
-´´´bash
+```bash
 rainscale/            # Diretório raiz;
 |-- datas/            # Dados do projeto (.csv .geojson .nc);
 |   |-- external/     # Dados de fontes externas;
@@ -23,20 +23,20 @@ rainscale/            # Diretório raiz;
 |-- manage.py         # Script para automatizar tarefas;
 |-- README.md         # Documento explicativo do projeto;
 `-- requirements.txt  # Lista de dependências.
-´´´
+```
 
 ## ⚙️ Gerenciamento com manage.py
 
 O arquivo `manage.py` automatiza tarefas comuns como criação de ambiente virtual, instalação de dependências, treinamento e predição. Para mais informações sobre os comandos, digite no console:
 
-´´´bash
+```bash
 $ python manage.py
-´´´
+```
 
 ## 🧰 Dependências
 
 As bibliotecas necessárias estão listadas em `requirements.txt`. Para instalá-las manualmente:  
 
-´´´bash
+```bash
 $ pip install -r requirements.txt
-´´´
+```
